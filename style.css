@@ -53,10 +53,15 @@ textarea {
     border-radius: 8px;
     border: 1px solid black;
     margin-top: 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.5 ease;
 }
 
 .cleanButton:hover{
     background-color: rgba(19, 1, 1, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 15px rgba(79, 70 229, 0.4);
 }
 
 textarea::-webkit-scrollbar {

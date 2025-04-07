@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>CleanChar</title>
+</head>
+<body>
+
+  <div class="titulo">
+    Clear<span class="number"><b>Number+</b></span>
+  </div>
+
+  <div class="container">
+    
+    <div>
+      <textarea id="numeros" rows="10" cols="50"></textarea>
+      <button class="cleanButton" onclick="limparNumeros()">Limpar</button>
+    </div>
+
+    <div>
+      <textarea id="resultado" rows="10" cols="50" readonly></textarea>
+    </div>
+    
+
+  </div>
+
+  <script>
+    function limparNumeros() {
+      const input = document.getElementById("numeros").value;
+
+      const numerosLimpos = input
+        .split("\n")
+        .map(linha => linha.replace(/\D/g, ""))
+        .filter(linha => linha.length > 0)
+        .map((numero, index) => `${index + 1} - ${numero}`)
+        .join("\n");
+
+      document.getElementById("resultado").value = numerosLimpos;
+    }
+  </script>
+  
+</body>
+</html>
